@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LocalDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketID" />
+          </Key>
+          <Property Name="ticketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="owner" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="storeNumb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="deviceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="team" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="severity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="priority" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tSubtype" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="tType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="problemNotes" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="callerPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="callerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="resCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="resType" Type="nvarchar" MaxLength="50" />
+          <Property Name="resNotes" Type="nvarchar" MaxLength="50" />
+          <Property Name="created" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="closed" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastUpdatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="assigned" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LocalDBModelStoreContainer">
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LocalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketID" />
+          </Key>
+          <Property Name="ticketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="storeNumb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="deviceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="severity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="priority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tSubtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="problemNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="callerPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="callerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="resCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="closed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="assigned" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LocalDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LocalDBModelStoreContainer" CdmEntityContainer="LocalDBEntities">
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="LocalDBModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="ticketID" ColumnName="ticketID" />
+                <ScalarProperty Name="owner" ColumnName="owner" />
+                <ScalarProperty Name="storeNumb" ColumnName="storeNumb" />
+                <ScalarProperty Name="deviceNumber" ColumnName="deviceNumber" />
+                <ScalarProperty Name="team" ColumnName="team" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="severity" ColumnName="severity" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="tCode" ColumnName="tCode" />
+                <ScalarProperty Name="tSubtype" ColumnName="tSubtype" />
+                <ScalarProperty Name="tCategory" ColumnName="tCategory" />
+                <ScalarProperty Name="tType" ColumnName="tType" />
+                <ScalarProperty Name="problemNotes" ColumnName="problemNotes" />
+                <ScalarProperty Name="callerPhone" ColumnName="callerPhone" />
+                <ScalarProperty Name="callerName" ColumnName="callerName" />
+                <ScalarProperty Name="resCode" ColumnName="resCode" />
+                <ScalarProperty Name="resType" ColumnName="resType" />
+                <ScalarProperty Name="resNotes" ColumnName="resNotes" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="closed" ColumnName="closed" />
+                <ScalarProperty Name="lastUpdatedBy" ColumnName="lastUpdatedBy" />
+                <ScalarProperty Name="assigned" ColumnName="assigned" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
